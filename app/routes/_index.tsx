@@ -1,5 +1,5 @@
 import type { V2_MetaFunction } from "@remix-run/node";
-import { Outlet } from "@remix-run/react";
+import { Link, Outlet } from "@remix-run/react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { AiOutlineHeart } from "react-icons/ai";
 
@@ -10,8 +10,12 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <div className="bodyContentWrapper">
-      <header></header>
+      <header>note book</header>
       <main>
+        <div className="linkContainer">
+          <Link to="note-taking" className="hotLink">take notes</Link>
+          <Link to="read" className="hotLink">read notes</Link>
+        </div>
         <Outlet />
       </main>
       <footer>

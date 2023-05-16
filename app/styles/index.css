@@ -80,6 +80,22 @@ svg {
     max-width: 100%;
 }
 
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-height: 30vh;
+    max-width: 30vw;
+}
+
+.hotLink {
+    background-color: #0e1230;
+    border: 1px solid #4154d6;
+    font-size: 1.4rem;
+    padding: 1rem;
+    text-decoration: none;
+}
+
 footer {
     display: flex;
     margin: .5rem;
