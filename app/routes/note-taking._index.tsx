@@ -6,6 +6,7 @@ import { db } from "~/utils/db.server";
 export const action = async ({ request }: ActionArgs) => {
     const formData = await request.formData();
     const title = formData.get("title");
+    const category = formData.get("category");
     const body = formData.get("body");
 
     if((typeof title !== "string") || (typeof body !== "string")) {
@@ -28,12 +29,14 @@ export default function NoteTakingIndex() {
             <h3>note taking index </h3>
             <Form method="post" >
                 <input type="text" name="title" placeholder="note title"/>
+                <input type="text" name="category" placeholder="category" />
                 <textarea name="body" placeholder="note content" ></textarea>
                 <button type="submit">Save</button>
             </Form>
             <section>
                 <Outlet />
                 <h3>{data ? data.title : ""}</h3>
+                <p>{data ? data.category: ""} </p>
                 <p>{data ? data.body : ""}</p>
             </section>
             <div className="redirectButton">
