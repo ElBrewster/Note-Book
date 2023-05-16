@@ -5,10 +5,11 @@ export async function getNote(id: number){
     return db.note.findUnique({where: {id}});
 }
 
-export function createNote({title, body}: ) {
+export function createNote({title, category, body}: ) {
     return db.note.create({
         data: {
             title,
+            category,
             body,
         }
     })

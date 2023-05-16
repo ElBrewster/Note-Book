@@ -13,10 +13,10 @@ export const action = async ({ request }: ActionArgs) => {
         throw new Error("Form not stringy!");
     }
 
-    const noteInput = { title, body };
+    const noteInput = { title, category, body };
     const note = await db.note.create({ data: noteInput });
     console.log("noteInput: ", noteInput)
-    return json({title, body});
+    return json({title, category, body});
 }
 
 //actions/loaders allow you to:
@@ -28,9 +28,10 @@ export default function NoteTakingIndex() {
         <div className="noteForm">
             <h3>note taking index </h3>
             <Form method="post" >
-                <input type="text" name="title" placeholder="note title"/>
+                <input type="text" name="title" placeholder="title"/>
                 <input type="text" name="category" placeholder="category" />
-                <textarea name="body" placeholder="note content" ></textarea>
+                {/* //add a 'to find it later' note in the left-hand margin */}
+                <textarea name="body" placeholder="content" ></textarea>
                 <button type="submit">Save</button>
             </Form>
             <section>
