@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box; 
+}
+
+html {
+    color-scheme: light dark;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body, 
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+input, 
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+} 
+
+a {
+    text-decoration-skip-ink: all;
+}
+
+body {
+    background-color: #1d0914;
+    font-family: system-ui;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+.bodyContentWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    margin-inline: auto;
+    width: min(70ch, 100% - 4rem)
+}
+
+header {
+    background-color: #0e1230;
+    border: 1px solid #4154d6;
+    color: #c6c9da;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: .5rem;
+    padding: 1rem;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+footer {
+    display: flex;
+    margin: .5rem;
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 14rem;
+}
+
+.footerNote {
+    align-items: center;
+    display: flex;
+}
