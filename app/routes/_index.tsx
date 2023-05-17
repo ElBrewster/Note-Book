@@ -14,7 +14,7 @@ export default function Index() {
       <main>
         <div className="linkContainer">
           <Link to="note-taking" className="hotLink">take notes</Link>
-          <Link to="read" className="hotLink">read notes</Link>
+          <Link to="note-reading" className="hotLink">read notes</Link>
         </div>
         <Outlet />
       </main>

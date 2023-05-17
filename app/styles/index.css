@@ -56,6 +56,10 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    margin-left: 1rem;
+}
+
 main {
     display: flex;
     flex: 1;

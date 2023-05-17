@@ -38,7 +38,7 @@ export default function NoteTakingIndex() {
                 </div>
             </Form>
             <div className="redirectBtn">
-                <Link to="/read">
+                <Link to="/note-reading">
                     <button >See All My Notes</button>
                 </Link>
             </div>

@@ -1,0 +1,7 @@
+.noteContainer {
+    border: 1px solid silver;
+    display: flex;
+    flex-direction: column;
+    padding: .2rem;
+    margin: .3rem;
+}
