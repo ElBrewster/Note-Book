@@ -25,13 +25,16 @@ textarea {
     min-width: 40vw;
     padding: .5rem;
 }
-
+.buttonWrapper {
+    display: flex;
+}
+.resetBtn,
 button {
     padding: .5rem;
     margin: .3rem;
     width: 10rem;
 }
 
-.redirectButton {
+.redirectBtn {
     padding: .5rem;
 }
