@@ -47,6 +47,8 @@ export default function NoteTakingIndex() {
                 <h3>{data ? data.title : ""}</h3>
                 <p>{data ? data.category: ""} </p>
                 <p>{data ? data.body : ""}</p>
+                {/* it would be nice to have an "edit" button to fix up typos and etc. It makes sense for it to be here. I guess it would be another form to post the same stuff to the database but edited, is that "patch"? What a fun problem */}
+                {/* following along this train of thought, it would be nice to edit past submissions too, from the 'read' view, but I'm not sure what I want for that either */}
             </section>
         </div>
     );

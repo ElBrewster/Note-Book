@@ -14,6 +14,8 @@ export default function ReadIndex() {
     return (
         <div>
             <h2>read._index</h2>
+            <h3>I want a category nav</h3>
+            <h4>and I want a keyword filter for all notes</h4>
             {data.notes.map(note => (
                 <section className="noteContainer">
                     <h3>{note.title}</h3>
