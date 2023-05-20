@@ -32,7 +32,11 @@ export default function NoteTakingIndex() {
       <Form method="post" id="myNotesForm">
         <input type="text" name="title" placeholder="title" />
         <input type="text" name="category" placeholder="category" />
-        <textarea name="body" placeholder="content"></textarea>
+        <textarea
+          name="body"
+          aria-multiline="true"
+          placeholder="content"
+        ></textarea>
         <div className="buttonWrapper">
           <button type="submit" className="submitBtn">
             Save
