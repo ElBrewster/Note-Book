@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 export default function MyTextarea() {
   const {
@@ -8,5 +8,23 @@ export default function MyTextarea() {
     control,
     formState: { errors },
   } = useForm({});
-  return <div className="textareaWrapper"></div>;
+
+  return (
+    <div className="textareaWrapper">
+        <form onSubmit={handleSubmit((data) => {console.log(data)})}>
+            <label htmlFor="textarea">Add your notes here:</label>
+            <Controller
+            control={control}
+            name="textarea"
+            rules={{required: true}}
+            render={({
+                field: {}
+            }) => (
+                <p></p>
+            )}
+            />
+            <input type="submit" />
+        </form>
+    </div>
+  );
 }
