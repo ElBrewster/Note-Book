@@ -20,6 +20,8 @@
     "react-icons": "^4.8.0",
     "remix-utils": "^6.3.0",
     "remix-validated-form": "^4.6.11",
+    "rich-textarea": "^0.21.0",
+    "textarea": "^0.3.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
