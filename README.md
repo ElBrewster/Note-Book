@@ -25,3 +25,4 @@ So I'm leaving this here in case you'd like to personalize your own full-stack n
 
 13. the font choice really matters since the input field and notecards being read are the point of this app. Needs to feel good to type, needs to feel good to read. Make the font slightly bigger like
 14. Link from read view to note taking view
+15. I want a spreadsheet view option
