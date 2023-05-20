@@ -17,3 +17,6 @@ List of Helpful Resources
   - use register() cbfunc to return props and assist in controlling form inputs
   - handleSubmit() retrieves the value on submit in the onSubmit form action. The argument will be the data from submit
   - watch() shows keystrokes in the console like controlled react forms
+  - Controller page for [react hook form](https://www.react-hook-form.com/api/usecontroller/controller/)
+  - [and](https://react-hook-form.com/get-started#IntegratingControlledInputs)
+  - example of use with [rich text library](https://github.com/inokawa/rich-textarea/blob/982c733331997d7605e05a08c8676e844c3671d7/stories/form-libraries/WithReactHookForm.stories.tsx)
