@@ -20,3 +20,4 @@ List of Helpful Resources
   - Controller page for [react hook form](https://www.react-hook-form.com/api/usecontroller/controller/)
   - [and](https://react-hook-form.com/get-started#IntegratingControlledInputs)
   - example of use with [rich text library](https://github.com/inokawa/rich-textarea/blob/982c733331997d7605e05a08c8676e844c3671d7/stories/form-libraries/WithReactHookForm.stories.tsx)
+  - consider implementing the [highlighter](https://www.npmjs.com/package/react-highlight-words)

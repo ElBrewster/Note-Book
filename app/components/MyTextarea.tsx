@@ -1,6 +1,6 @@
 import { Controller, useForm } from "react-hook-form";
 import { RichTextarea } from "rich-textarea";
-import Highlighter from "react-highlight-words";
+// import Highlighter from "react-highlight-words";
 
 export default function MyTextarea() {
   const {
@@ -32,7 +32,7 @@ export default function MyTextarea() {
                     aria-invalid={errors.textarea ? "true" : "false"}
                     value={value}
                     style={style}
-                    placeholder="notes"
+                    placeholder="content"
                     name={name}
                     onChange={onChange}
                     onBlur={onBlur}

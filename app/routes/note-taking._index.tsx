@@ -10,7 +10,7 @@ export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
   const title = formData.get("title");
   const category = formData.get("category");
-  const body = formData.get("body");
+  const body = formData.get("textarea");
 
   if (typeof title !== "string" || typeof body !== "string") {
     throw new Error("Form not stringy!");
@@ -30,6 +30,7 @@ export default function NoteTakingIndex() {
   return (
     <div className="noteForm">
       <h3>note taking index </h3>
+      <MyTextarea />
       <Form method="post" id="myNotesForm">
         <input type="text" name="title" placeholder="title" />
         <input type="text" name="category" placeholder="category" />
@@ -50,7 +51,6 @@ export default function NoteTakingIndex() {
           <button>See All My Notes</button>
         </Link>
       </div>
-      <MyTextarea />
       <section>
         <Outlet />
         <h3>{data ? data.title : ""}</h3>
