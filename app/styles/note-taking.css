@@ -42,4 +42,5 @@ button {
 .textareaWrapper {
   background-color: wheat;
   border: 2px solid salmon;
+  color: darkred;
 }
