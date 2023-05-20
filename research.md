@@ -8,4 +8,12 @@ List of Helpful Resources
 - [remix-utils for client only](https://github.com/sergiodxa/remix-utils#clientonly)[and](https://github.com/sergiodxa/remix-utils#usehydrated)
 - [getting data from parent route to the child](https://spin.atomicobject.com/2023/01/26/remix-routing/)
 
+## NPM Packages
+
 - [rich text](https://github.com/inokawa/rich-textarea)
+- [rich text examples](https://github.com/inokawa/rich-textarea/tree/982c733331997d7605e05a08c8676e844c3671d7/stories)
+- [react-hook-form](https://react-hook-form.com/get-started)
+  - useForm() hook brings in functions from react-hook-form library
+  - use register() cbfunc to return props and assist in controlling form inputs
+  - handleSubmit() retrieves the value on submit in the onSubmit form action. The argument will be the data from submit
+  - watch() shows keystrokes in the console like controlled react forms
