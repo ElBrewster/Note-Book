@@ -4,6 +4,7 @@ import { Form, Link, Outlet, useActionData } from "@remix-run/react";
 import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
+import MyTextarea from "~/components/MyTextarea";
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
@@ -49,6 +50,7 @@ export default function NoteTakingIndex() {
           <button>See All My Notes</button>
         </Link>
       </div>
+      <MyTextarea />
       <section>
         <Outlet />
         <h3>{data ? data.title : ""}</h3>
