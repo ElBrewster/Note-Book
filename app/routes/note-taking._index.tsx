@@ -1,6 +1,6 @@
 //note-taking route "main" tag default contents, displayed in note-taking.tsx <Outlet>
 
-import { Form, Link, Outlet, useActionData } from "@remix-run/react";
+import { Form, Link, Outlet, useActionData, useParams } from "@remix-run/react";
 import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
