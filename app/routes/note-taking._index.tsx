@@ -1,10 +1,13 @@
 //note-taking route "main" tag default contents, displayed in note-taking.tsx <Outlet>
 
-import { Form, Link, Outlet, useActionData } from "@remix-run/react";
-import type { ActionArgs } from "@remix-run/node";
+import { Form, Link, Outlet, useActionData, useParams } from "@remix-run/react";
+import type { ActionArgs, ActionFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
 import MyTextarea from "~/components/MyTextarea";
+
+// import { formAction } from "~/utils/form-action.server";
+// import { RemixForm, schema, mutation } from "~/utils/form";
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
@@ -22,8 +25,14 @@ export const action = async ({ request }: ActionArgs) => {
   return json({ title, category, body });
 };
 
-//actions/loaders allow you to:
-//co-locate data read, component that renders the data, and the data writes
+// export const action: ActionFunction = async ({request}) => 
+//   formAction({
+//     request,
+//     schema,
+//     mutation,
+//     successPath: "/success", /*path to redirect on success */
+//   })
+
 export default function NoteTakingIndex() {
   const data = useActionData<typeof action>();
 

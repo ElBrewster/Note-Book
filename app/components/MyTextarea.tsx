@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { RichTextarea } from "rich-textarea";
 // import Highlighter from "react-highlight-words";
 
+// interface MyData {
+//   type: string;
+//   prevState: null;
+// }
+
 export default function MyTextarea() {
+  const [myText, setMyText] = useState();
+
   const {
     register,
     handleSubmit,
@@ -15,9 +23,11 @@ export default function MyTextarea() {
 
   const style = { padding: ".5rem"};
 
+  console.log({myText})
+
   return (
     <div className="textareaWrapper">
-        <form onSubmit={handleSubmit((data) => {console.log(data)})}>
+        <form onSubmit={handleSubmit((data) => setMyText(data))}>
 
             <label htmlFor="textarea">Add your notes here:</label>
 
