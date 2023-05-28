@@ -18,3 +18,5 @@ model Note {
   category String
   body String
 }
+
+//switch from "category" to "keyword(s)", or just call it that on the client side
