@@ -1,7 +1,5 @@
-//note-taking route "main" tag default contents, displayed in note-taking.tsx <Outlet>
-
 import { Form, Link, Outlet, useActionData, useParams } from "@remix-run/react";
-import type { ActionArgs, ActionFunction } from "@remix-run/node";
+import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
 import MyTextarea from "~/components/MyTextarea";
@@ -38,7 +36,7 @@ export default function NoteTakingIndex() {
   return (
     <div className="noteForm">
       <h3>note taking index </h3>
-      <MyTextarea setRichFormData={setRichFormData} />
+      <MyTextarea setRichFormData={setRichFormData} richFormData={richFormData}/>
 
       <Form method="post" id="myNotesForm">
         <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
@@ -50,13 +48,6 @@ export default function NoteTakingIndex() {
             Add to Notebook:
           </button>
         </div>
-        {/* <textarea
-          readOnly
-          name="body"
-          value={richFormData.body}
-          aria-multiline="true"
-          placeholder="content"
-        ></textarea> */}
       </Form>
 
       <div className="redirectBtn">
@@ -66,9 +57,9 @@ export default function NoteTakingIndex() {
       </div>
       <section>
         <Outlet />
-        <h3>{data ? data.title : ""}</h3>
+        {/* <h3>{data ? data.title : ""}</h3>
         <p>{data ? data.category : ""} </p>
-        <p>{data ? data.body : ""}</p>
+        <p>{data ? data.body : ""}</p> */}
       </section>
       <div className="redirectBtn">
         <Outlet />

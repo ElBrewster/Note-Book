@@ -1,5 +1,3 @@
-//note-taking route module layout
-
 import { Outlet } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
 import stylesHref from "app/styles/note-taking.css";

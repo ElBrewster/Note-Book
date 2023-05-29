@@ -1,3 +1,4 @@
+import { Outlet } from "@remix-run/react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { RichTextarea } from "rich-textarea";
@@ -5,12 +6,14 @@ import { RichTextarea } from "rich-textarea";
 type MyTextareaProps = {
   setRichFormData: Function;
 }
-
+type MyRichFormData = {
+  richFormData: { title: string, category: string, body: string };
+}
 const initialTitle = { title: ""};
 const initialCateogry = { category: ""};
 const initialTextArea = { body: ""};
 
-export default function MyTextarea({setRichFormData}: MyTextareaProps) {
+export default function MyTextarea({setRichFormData}: MyTextareaProps, {richFormData}: MyRichFormData) {
   const [myTitle, setMyTitle] = useState(initialTitle);
   const [myCategory, setMyCategory] = useState(initialCateogry);
   const [myText, setMyText] = useState(initialTextArea);
@@ -35,9 +38,22 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps) {
     resetField("title");
     resetField("category");
     resetField("body");
+    showSavedData();
   }
-
-  console.log({myTitle, myCategory, myText})
+  
+  function showSavedData() {
+    const showTitle = myTitle ? <p>{myTitle.title}</p> : "";
+    const showCategory= myCategory ? <p>{myCategory.category}</p> : "";
+    const showBody = myText ? <p>{myText.body}</p> : "";
+    console.log(showTitle)
+    return (
+      <div>
+        {showTitle}
+        {showCategory}
+        {showBody}
+      </div>
+    )
+  }
 
   return (
     <div className="textareaWrapper">
@@ -78,9 +94,11 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps) {
             <button type="submit">Save</button>
         </form>
         <div>
-        {myTitle ? <p>{myTitle.title}</p> : ""}
-        {myCategory ? <p>{myCategory.category}</p> : ""}
-        {myText ? <p>{myText.body}</p> : ""}
+          
+          <Outlet />
+        {richFormData ? <p>{richFormData.title}</p> : ""}
+        {richFormData ? <p>{richFormData.category}</p> : ""}
+        {richFormData ? <p>{richFormData.body}</p> : ""}
         </div>
     </div>
   );
