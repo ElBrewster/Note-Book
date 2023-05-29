@@ -8,7 +8,7 @@ import MyTextarea from "~/components/MyTextarea";
 import { useState } from "react";
 
 type InitialState = 
-  { title: string, category: string, textarea: string };
+  { title: string, category: string, body: string };
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
@@ -23,39 +23,43 @@ export const action = async ({ request }: ActionArgs) => {
 
   const noteInput = { title, category, body };
   const note = await db.note.create({ data: noteInput });
-  console.log("noteInput: ", noteInput);
+  console.log("noteInput: ", noteInput)
+  console.log("note: ", note);
   return json({ title, category, body });
 };
 
 export default function NoteTakingIndex() {
   const data = useActionData<typeof action>();
 
-  const [richFormData, setRichFormData] = useState<InitialState>({ title: "", category: "", textarea: "" })
+  const [richFormData, setRichFormData] = useState<InitialState>({ title: "", category: "", body: "" })
 
   console.log({richFormData});
+  console.log("richformdata.title:", richFormData.title)
   return (
     <div className="noteForm">
       <h3>note taking index </h3>
       <MyTextarea setRichFormData={setRichFormData} />
 
       <Form method="post" id="myNotesForm">
-        <input type="text" name="title" placeholder="title" />
-        <input type="text" name="category" placeholder="category" />
+        <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
+        <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
+        <div className="buttonWrapper">
+          <button type="submit" className="submitBtn">
+            Add to Notebook:
+          </button>
+        </div>
         <textarea
+          readOnly
           name="body"
+          value={richFormData.body}
           aria-multiline="true"
           placeholder="content"
         ></textarea>
-        <div className="buttonWrapper">
-          <button type="submit" className="submitBtn">
-            Save
-          </button>
-        </div>
       </Form>
 
       <div className="redirectBtn">
         <Link to="/note-reading">
-          <button>See All My Notes</button>
+          <button>Go See All My Notes</button>
         </Link>
       </div>
       <section>

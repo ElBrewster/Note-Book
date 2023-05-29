@@ -10,6 +10,7 @@ List of Helpful Resources
 
 ## NPM Packages
 
+- [remix-forms](https://remix-forms.seasoned.cc/get-started)
 - [rich text](https://github.com/inokawa/rich-textarea)
 - [rich text examples](https://github.com/inokawa/rich-textarea/tree/982c733331997d7605e05a08c8676e844c3671d7/stories)
 - [react-hook-form](https://react-hook-form.com/get-started)
