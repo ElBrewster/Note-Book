@@ -1,35 +1,51 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { RichTextarea } from "rich-textarea";
-// import Highlighter from "react-highlight-words";
 
-// interface MyData {
-//   type: string;
-//   prevState: null;
-// }
+type MyTextareaProps = {
+  setRichFormData: Function;
+}
 
-export default function MyTextarea() {
-  const [myText, setMyText] = useState();
+const initialTitle = { title: ""};
+const initialCateogry = { category: ""};
+const initialTextArea = { textarea: ""};
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    control,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {textarea: "",}
+export default function MyTextarea({setRichFormData}: MyTextareaProps) {
+  const [myTitle, setMyTitle] = useState(initialTitle);
+  const [myCategory, setMyCategory] = useState(initialCateogry);
+  const [myText, setMyText] = useState(initialTextArea);
+  const { register, resetField, handleSubmit, control, formState: { errors }, } = useForm({
+    defaultValues: { title: "", category: "", textarea: "" },
   });
 
   const style = { padding: ".5rem"};
 
-  console.log({myText})
+  function onSubmit(data) {
+    let {title, category, textarea} = data;
+    setMyTitle(title);
+    setMyCategory(category);
+    setMyText(textarea);
+
+    setRichFormData(() => ({
+      title: title,
+      category: category,
+      textarea: textarea, 
+    }));
+
+    resetField("title");
+    resetField("category");
+    resetField("textarea");
+  }
+
+  console.log({myTitle, myCategory, myText})
 
   return (
     <div className="textareaWrapper">
-        <form onSubmit={handleSubmit((data) => setMyText(data))}>
-
-            <label htmlFor="textarea">Add your notes here:</label>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input placeholder="title" {...register("title")} />
+        <input placeholder="category" {...register("category")} />
+        
+        <label htmlFor="textarea">Add your notes here:</label>
 
             <Controller
             control={control}
@@ -61,6 +77,11 @@ export default function MyTextarea() {
             />
             <input type="submit" />
         </form>
+        <div>
+        {myTitle ? <p>{myTitle.title}</p> : ""}
+        {myCategory ? <p>{myCategory.category}</p> : ""}
+        {myText ? <p>{myText.textarea}</p> : ""}
+        </div>
     </div>
   );
 }

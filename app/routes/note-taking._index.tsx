@@ -5,15 +5,17 @@ import type { ActionArgs, ActionFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
 import MyTextarea from "~/components/MyTextarea";
+import { useState } from "react";
 
-// import { formAction } from "~/utils/form-action.server";
-// import { RemixForm, schema, mutation } from "~/utils/form";
+type InitialState = 
+  { title: string, category: string, textarea: string };
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
   const title = formData.get("title");
   const category = formData.get("category");
-  const body = formData.get("textarea");
+  const body = formData.get("body");
+
 
   if (typeof title !== "string" || typeof body !== "string") {
     throw new Error("Form not stringy!");
@@ -25,21 +27,17 @@ export const action = async ({ request }: ActionArgs) => {
   return json({ title, category, body });
 };
 
-// export const action: ActionFunction = async ({request}) => 
-//   formAction({
-//     request,
-//     schema,
-//     mutation,
-//     successPath: "/success", /*path to redirect on success */
-//   })
-
 export default function NoteTakingIndex() {
   const data = useActionData<typeof action>();
 
+  const [richFormData, setRichFormData] = useState<InitialState>({ title: "", category: "", textarea: "" })
+
+  console.log({richFormData});
   return (
     <div className="noteForm">
       <h3>note taking index </h3>
-      <MyTextarea />
+      <MyTextarea setRichFormData={setRichFormData} />
+
       <Form method="post" id="myNotesForm">
         <input type="text" name="title" placeholder="title" />
         <input type="text" name="category" placeholder="category" />
@@ -52,9 +50,9 @@ export default function NoteTakingIndex() {
           <button type="submit" className="submitBtn">
             Save
           </button>
-          <input type="reset" value="Reset" className="resetBtn" />
         </div>
       </Form>
+
       <div className="redirectBtn">
         <Link to="/note-reading">
           <button>See All My Notes</button>
@@ -65,13 +63,8 @@ export default function NoteTakingIndex() {
         <h3>{data ? data.title : ""}</h3>
         <p>{data ? data.category : ""} </p>
         <p>{data ? data.body : ""}</p>
-        {/* it would be nice to have an "edit" button to fix up typos and etc. It makes sense for it to be here. I guess it would be another form to post the same stuff to the database but edited, is that "patch"? What a fun problem */}
-        {/* following along this train of thought, it would be nice to edit past submissions too, from the 'read' view, but I'm not sure what I want for that either */}
       </section>
       <div className="redirectBtn">
-        <Link to="/note-taking/smol">
-          <button>See All My Notes</button>
-        </Link>
         <Outlet />
       </div>
     </div>
