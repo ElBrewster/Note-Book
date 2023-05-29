@@ -43,18 +43,20 @@ export default function NoteTakingIndex() {
       <Form method="post" id="myNotesForm">
         <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
         <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
+        <input type="hidden" name="body" value={richFormData.body} placeholder="body" />
+
         <div className="buttonWrapper">
           <button type="submit" className="submitBtn">
             Add to Notebook:
           </button>
         </div>
-        <textarea
+        {/* <textarea
           readOnly
           name="body"
           value={richFormData.body}
           aria-multiline="true"
           placeholder="content"
-        ></textarea>
+        ></textarea> */}
       </Form>
 
       <div className="redirectBtn">

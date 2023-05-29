@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { RichTextarea } from "rich-textarea";
 
@@ -29,7 +29,7 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps) {
     setRichFormData(() => ({
       title: title,
       category: category,
-      textarea: body, 
+      body: body, 
     }));
 
     resetField("title");
