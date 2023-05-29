@@ -1,4 +1,4 @@
-import { Form, Link, Outlet, useActionData, useParams } from "@remix-run/react";
+import { Form, Link, useActionData, useParams } from "@remix-run/react";
 import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
@@ -38,6 +38,11 @@ export default function NoteTakingIndex() {
       <h3>note taking index </h3>
       <MyTextarea setRichFormData={setRichFormData} richFormData={richFormData}/>
 
+      <section>
+        <h3>{richFormData ? richFormData.title : ""}</h3>
+        <p>{richFormData ? richFormData.category : ""} </p>
+        <p>{richFormData ? richFormData.body : ""}</p>
+      </section>
       <Form method="post" id="myNotesForm">
         <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
         <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
@@ -54,15 +59,6 @@ export default function NoteTakingIndex() {
         <Link to="/note-reading">
           <button>Go See All My Notes</button>
         </Link>
-      </div>
-      <section>
-        <Outlet />
-        {/* <h3>{data ? data.title : ""}</h3>
-        <p>{data ? data.category : ""} </p>
-        <p>{data ? data.body : ""}</p> */}
-      </section>
-      <div className="redirectBtn">
-        <Outlet />
       </div>
     </div>
   );

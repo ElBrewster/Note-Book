@@ -1,4 +1,3 @@
-import { Outlet } from "@remix-run/react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { RichTextarea } from "rich-textarea";
@@ -38,21 +37,6 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps, {richForm
     resetField("title");
     resetField("category");
     resetField("body");
-    showSavedData();
-  }
-  
-  function showSavedData() {
-    const showTitle = myTitle ? <p>{myTitle.title}</p> : "";
-    const showCategory= myCategory ? <p>{myCategory.category}</p> : "";
-    const showBody = myText ? <p>{myText.body}</p> : "";
-    console.log(showTitle)
-    return (
-      <div>
-        {showTitle}
-        {showCategory}
-        {showBody}
-      </div>
-    )
   }
 
   return (
@@ -87,19 +71,11 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps, {richForm
                         </span>
                     ));
                 }}
-                </RichTextarea>)
-                    
-                }
+                </RichTextarea>
+            )}
             />
-            <button type="submit">Save</button>
+            <input type="submit" />
         </form>
-        <div>
-          
-          <Outlet />
-        {richFormData ? <p>{richFormData.title}</p> : ""}
-        {richFormData ? <p>{richFormData.category}</p> : ""}
-        {richFormData ? <p>{richFormData.body}</p> : ""}
-        </div>
     </div>
   );
 }
