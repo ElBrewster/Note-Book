@@ -1,7 +1,11 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import NoteCard from "~/components/NoteCard";
 import { db } from "~/utils/db.server";
 
+type Note = {
+    note: { id: number, title: string, category: string, body: string };
+ }
 
 export const loader = async () => {
     return json({
@@ -12,15 +16,11 @@ export const loader = async () => {
 export default function ReadIndex() {
     const data = useLoaderData<typeof loader>();
     return (
-        <div>
-            <h2>read._index</h2>
-            <h3>I want a category nav</h3>
-            <h4>and I want a keyword filter for all notes</h4>
+        <div className="noteGrid">
+            {/* <h3>I want a category nav</h3> */}
+            {/* <h4>and I want a keyword filter for all notes</h4> */}
             {data.notes.map(note => (
-                <section className="noteContainer" key={note.id}>
-                    <h3>{note.title}</h3>
-                    <p>{note.body}</p>
-                </section>
+                <NoteCard key={note.id} note={note}/>
             ))}
         </div>
     );

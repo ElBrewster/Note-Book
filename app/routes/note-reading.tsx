@@ -22,8 +22,8 @@ export default function Read() {
                 </Link>
               </nav>
             </header>
-            <h1>read</h1>
             <main>
+            <h1>Read Past Notes</h1>
                 <Outlet />
             </main>
             <footer>.</footer>

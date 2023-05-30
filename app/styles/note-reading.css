@@ -14,4 +14,51 @@ button {
     padding: 0.5rem;
     margin: 0.3rem;
     width: 10rem;
-  }
+}
+
+.noteGrid {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.noteCard {
+    aspect-ratio: 5 / 3;
+    background-color: aliceblue;
+    color: #4154d6;
+    max-width: 30rem;
+}
+
+.noteCardHeader {
+    background-color: aliceblue;
+    border: none;
+    border-bottom: 1px solid red;
+    color: #4154d6;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.noteCardTitle {
+    align-self: center;
+    padding: 0 .2rem;
+}
+  
+.noteCardBody {
+    padding: 0 .2rem;
+}
+
+.trashIcon {
+    background-color: aliceblue;
+    height: 3rem;
+    width: 3rem;
+}
+
+.trashIcon:hover {
+    background-color: lightskyblue;
+}
+
+.trashIcon:active {
+    background-color: pink;
+}
