@@ -12,8 +12,9 @@ Form {
 
 .componentForm {
   background-color: #e6e6ff;
-  ;
+  display: flex;
 }
+
 .labelForBody {
   padding: .3rem;
 }
@@ -28,6 +29,11 @@ input {
   padding: 0.5rem;
   margin: .2rem 0;
 }
+body > div > main > div > div.textareaWrapper > form > div  {
+  display: flex;
+  position: relative;
+  height: 440px;
+}
 
 textarea {
   background-color: #d5d5fe;
@@ -37,11 +43,14 @@ textarea {
   border-left: 2px solid #10065d; */
   border: 5px solid white;
   border-radius: .1rem;
+  display: flex;
   min-height: 30vh;
   min-width: 80vw;
   padding: 0.5rem;
 }
 
+
+document.querySelector("body > div > main > div > div.textareaWrapper > form > div > textarea")
 .submitInput {
   background-color: #4154d6;
   border-radius: .2rem;
@@ -72,7 +81,10 @@ button {
 }
 
 .controller{
+  display: flex;
+  flex: 1;
   margin: 1rem;
+  min-width: fit-content;
 }
 
 .textareaWrapper {
