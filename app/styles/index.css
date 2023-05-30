@@ -38,11 +38,13 @@ ol[role="list"] {
 }
 
 a {
+  color: #e0d0ff;
   text-decoration-skip-ink: all;
 }
 
 body {
-  background-color: #1d0914;
+  background-color: #1b2157;
+  color: #e0d0ff;
   font-family: system-ui;
   font-size: 1.125rem;
   line-height: 1.5;
@@ -116,18 +118,28 @@ footer {
   display: flex;
 }
 
-/* Purples {
+ /* Purples {
   primary: #5321b0;
   secondary: #ebbff3;
   accent: #4f115a;
   background: #d4d9f7;
   text: #080d2b;
-}
+} */
 
-Darkmode-Purples {
+/* Darkmode-Purples {
   primary: #715067;
   secondary: #151e18;
   accent: #362631;
   background: #0d120e;
   text: #e1eae4;
-} */
+}  */
+moreColors {
+  color: #1b2157;
+  color: #332355;
+  color: #2628c5;
+  color: #4a36de;
+  color: #8459fa;
+  color: #a85ff1;
+  color: #d7c3ff;
+
+}
