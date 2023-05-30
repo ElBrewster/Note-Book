@@ -42,10 +42,6 @@ textarea {
   padding: 0.5rem;
 }
 
-.buttonWrapper {
-  display: flex;
-}
-
 .submitInput {
   background-color: #4154d6;
   border-radius: .2rem;
@@ -87,4 +83,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.formsWrappers {
+  display: flex;
 }

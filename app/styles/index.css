@@ -88,6 +88,13 @@ header {
   background-color: #020a47;
   width: 14rem;
 }
+
+.navButton:hover {
+  background-color: #6b3bf0;
+  border: 2px solid #8459fa;
+  padding: 7px;
+  width: 14rem;
+}
 img,
 svg {
   align-self: center;

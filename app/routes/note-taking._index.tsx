@@ -36,29 +36,23 @@ export default function NoteTakingIndex() {
   return (
     <div className="noteForm">
       <MyTextarea setRichFormData={setRichFormData} richFormData={richFormData}/>
+      <div className="formsWrappers">
 
-      <section>
-        <h3>{richFormData ? richFormData.title : ""}</h3>
-        <p>{richFormData ? richFormData.category : ""} </p>
-        <p>{richFormData ? richFormData.body : ""}</p>
-      </section>
-      <Form method="post" id="myNotesForm">
-        <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
-        <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
-        <input type="hidden" name="body" value={richFormData.body} placeholder="body" />
-
-        <div className="buttonWrapper">
+        <Form method="post" id="myNotesForm">
+          <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
+          <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
+          <input type="hidden" name="body" value={richFormData.body} placeholder="body" />
           <button type="submit" className="submitBtn">
-            Add to Notebook:
+              Add to Notebook:
           </button>
-        </div>
-      </Form>
+        </Form>
+        <section>
+          <h3>{richFormData ? richFormData.title : ""}</h3>
+          <p>{richFormData ? richFormData.category : ""} </p>
+          <p>{richFormData ? richFormData.body : ""}</p>
+        </section>
+      </div>
 
-      {/* <div className="redirectBtn">
-        <Link to="/note-reading">
-          <button>Go See All My Notes</button>
-        </Link>
-      </div> */}
     </div>
   );
 }
