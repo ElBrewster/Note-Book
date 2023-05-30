@@ -35,7 +35,6 @@ export default function NoteTakingIndex() {
   console.log("richformdata.title:", richFormData.title)
   return (
     <div className="noteForm">
-      <h3>note taking index </h3>
       <MyTextarea setRichFormData={setRichFormData} richFormData={richFormData}/>
 
       <section>
@@ -55,11 +54,11 @@ export default function NoteTakingIndex() {
         </div>
       </Form>
 
-      <div className="redirectBtn">
+      {/* <div className="redirectBtn">
         <Link to="/note-reading">
           <button>Go See All My Notes</button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

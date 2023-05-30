@@ -59,13 +59,10 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  margin-left: 1rem;
-}
-
 main {
   display: flex;
   flex: 1;
+  flex-direction: column;
   margin-inline: auto;
   width: min(70ch, 100% - 4rem);
 }
@@ -78,9 +75,19 @@ header {
   flex-grow: 0;
   flex-shrink: 0;
   margin: 0.5rem;
-  padding: 1rem;
+  padding: .2rem;
 }
 
+.navContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1;
+}
+
+.navButton {
+  background-color: #020a47;
+  width: 14rem;
+}
 img,
 svg {
   align-self: center;
@@ -121,14 +128,4 @@ footer {
 .footerNote {
   align-items: center;
   display: flex;
-}
-
-moreColors {
-  color: #1b2157;
-  color: #2628c5;
-  color: #4a36de;
-  color: #8459fa;
-  color: #a85ff1;
-  color: #d7c3ff;
-
 }
