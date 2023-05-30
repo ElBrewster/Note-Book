@@ -9,7 +9,9 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <div className="bodyContentWrapper">
-      <header>note book</header>
+      <header>
+        <h1>NOTE BOOK</h1>
+      </header>
       <main>
         <div className="linkContainer">
           <Link to="note-taking" className="hotLink">take notes</Link>

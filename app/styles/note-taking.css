@@ -1,7 +1,3 @@
-h1 {
-  margin-left: 1rem;
-}
-
 .noteForm {
   display: flex;
   flex-direction: column;
@@ -14,33 +10,93 @@ Form {
   padding: 0.5rem;
 }
 
+.componentForm {
+  background-color: #e6e6ff;
+  display: flex;
+}
+
+.labelForBody {
+  padding: .3rem;
+}
+
 input {
-  margin: 0.3rem;
+  background-color: #d5d5fe;
+  border-top: 2px solid #4a36de;
+  border-right: 2px solid #4a36de;
+  border-bottom: 2px solid #10065d;
+  border-left: 2px solid #10065d;
+  border-radius: .1rem;
   padding: 0.5rem;
+  margin: .2rem 0;
+}
+body > div > main > div > div.textareaWrapper > form > div  {
+  display: flex;
+  position: relative;
+  height: 440px;
 }
 
 textarea {
-  margin: 0.3rem;
+  background-color: #d5d5fe;
+  /* border-top: 2px solid #4a36de;
+  border-right: 2px solid #4a36de;
+  border-bottom: 2px solid #10065d;
+  border-left: 2px solid #10065d; */
+  border: 5px solid white;
+  border-radius: .1rem;
+  display: flex;
   min-height: 30vh;
-  min-width: 40vw;
+  min-width: 80vw;
   padding: 0.5rem;
 }
-.buttonWrapper {
-  display: flex;
+
+
+document.querySelector("body > div > main > div > div.textareaWrapper > form > div > textarea")
+.submitInput {
+  background-color: #4154d6;
+  border-radius: .2rem;
+  color: #d5d5fe;
+  max-width: 20rem;
+  text-align: left;
 }
-.resetBtn,
+
+.submitInput:hover {
+  background-color: #8459fa;
+  color: #0e1230;
+  /* color: #a85ff1; */
+}
+
+.submitInput:active {
+  background-color: #a85ff1;
+  color: #4a36de;
+}
+
 button {
+  background-color:#0e1230;
+  border: 1px solid #4154d6;
+  border-radius: .1rem;
+  color: #d5d5fe;
   padding: 0.5rem;
   margin: 0.3rem;
   width: 10rem;
 }
 
-.redirectBtn {
-  padding: 0.5rem;
+.controller{
+  display: flex;
+  flex: 1;
+  margin: 1rem;
+  min-width: fit-content;
 }
 
 .textareaWrapper {
-  background-color: wheat;
-  border: 2px solid salmon;
-  color: darkred;
+  background-color: #f0f0ff;
+  border: 2px solid #4a36de;
+  border-radius: .2rem;
+  color: #2628c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.formsWrappers {
+  display: flex;
 }

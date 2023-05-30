@@ -16,14 +16,14 @@ export default function Read() {
     return (
         <div className="bodyContentWrapper">
             <header>
-            <div className="redirectBtn">
+              <nav className="navContainer">
                 <Link to="/note-taking">
-                  <button>Take A Note</button>
+                  <button className="navButton">Take Notes</button>
                 </Link>
-              </div>
+              </nav>
             </header>
-            <h1>read</h1>
             <main>
+            <h1>Read Past Notes</h1>
                 <Outlet />
             </main>
             <footer>.</footer>

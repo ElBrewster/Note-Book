@@ -1,4 +1,4 @@
-import { Form, Link, useActionData, useParams } from "@remix-run/react";
+import { Form, Link, useActionData } from "@remix-run/react";
 import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";
@@ -35,31 +35,24 @@ export default function NoteTakingIndex() {
   console.log("richformdata.title:", richFormData.title)
   return (
     <div className="noteForm">
-      <h3>note taking index </h3>
       <MyTextarea setRichFormData={setRichFormData} richFormData={richFormData}/>
+      <div className="formsWrappers">
 
-      <section>
-        <h3>{richFormData ? richFormData.title : ""}</h3>
-        <p>{richFormData ? richFormData.category : ""} </p>
-        <p>{richFormData ? richFormData.body : ""}</p>
-      </section>
-      <Form method="post" id="myNotesForm">
-        <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
-        <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
-        <input type="hidden" name="body" value={richFormData.body} placeholder="body" />
-
-        <div className="buttonWrapper">
+        <Form method="post" id="myNotesForm">
+          <input type="hidden" name="title" value={richFormData.title} placeholder="title" />
+          <input type="hidden" name="category" value={richFormData.category} placeholder="category" />
+          <input type="hidden" name="body" value={richFormData.body} placeholder="body" />
           <button type="submit" className="submitBtn">
-            Add to Notebook:
+              Add to Notebook:
           </button>
-        </div>
-      </Form>
-
-      <div className="redirectBtn">
-        <Link to="/note-reading">
-          <button>Go See All My Notes</button>
-        </Link>
+        </Form>
+        <section>
+          <h3>{richFormData ? richFormData.title : ""}</h3>
+          <p>{richFormData ? richFormData.category : ""} </p>
+          <p>{richFormData ? richFormData.body : ""}</p>
+        </section>
       </div>
+
     </div>
   );
 }
