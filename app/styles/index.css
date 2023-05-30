@@ -38,6 +38,7 @@ ol[role="list"] {
 }
 
 a {
+  align-self: center;
   color: #e0d0ff;
   text-decoration-skip-ink: all;
 }
@@ -82,6 +83,7 @@ header {
 
 img,
 svg {
+  align-self: center;
   display: block;
   max-width: 100%;
 }
@@ -97,14 +99,17 @@ svg {
 .hotLink {
   background-color: #0e1230;
   border: 1px solid #4154d6;
+  /* color: #d5d5fe; */
   font-size: 1.4rem;
   padding: 1rem;
   text-decoration: none;
 }
 
 footer {
+  border-top: 1px solid #0e1230;
   display: flex;
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
+  padding: .5rem;
 }
 
 .footerWrapper {
@@ -118,21 +123,6 @@ footer {
   display: flex;
 }
 
- /* Purples {
-  primary: #5321b0;
-  secondary: #ebbff3;
-  accent: #4f115a;
-  background: #d4d9f7;
-  text: #080d2b;
-} */
-
-/* Darkmode-Purples {
-  primary: #715067;
-  secondary: #151e18;
-  accent: #362631;
-  background: #0d120e;
-  text: #e1eae4;
-}  */
 moreColors {
   color: #1b2157;
   color: #2628c5;

@@ -1,6 +1,7 @@
 import { Outlet } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
 import stylesHref from "app/styles/note-taking.css";
+import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => {
   return [
@@ -19,7 +20,7 @@ export default function NoteTaking() {
       <main>
         <Outlet />
       </main>
-      <footer>.</footer>
+      <Footer />
     </div>
   );
 }
