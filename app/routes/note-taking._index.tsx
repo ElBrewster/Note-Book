@@ -1,4 +1,4 @@
-import { Form, Link, useActionData, useParams } from "@remix-run/react";
+import { Form, Link, useActionData } from "@remix-run/react";
 import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { db } from "~/utils/db.server";

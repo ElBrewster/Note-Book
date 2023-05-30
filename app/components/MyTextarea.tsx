@@ -20,7 +20,7 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps, {richForm
     defaultValues: { title: "", category: "", body: "" },
   });
 
-  const style = { padding: ".5rem"};
+  // const style = { padding: ".5rem", margin: ".2rem", color: "red"};
 
   function onSubmit(data) {
     let {title, category, body} = data;
@@ -41,11 +41,11 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps, {richForm
 
   return (
     <div className="textareaWrapper">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="componentForm">
         <input placeholder="title" {...register("title")} />
         <input placeholder="category" {...register("category")} />
         
-        <label htmlFor="body">Add your notes here:</label>
+        <label htmlFor="body" className="labelForBody">Add your notes here:</label>
 
             <Controller
             control={control}
@@ -57,9 +57,11 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps, {richForm
                 <RichTextarea 
                     aria-invalid={errors.body ? "true" : "false"}
                     value={value}
-                    style={style}
+                    // style={style}
                     placeholder="content"
                     name={name}
+                    className="controller"
+
                     onChange={onChange}
                     onBlur={onBlur}
                     ref={ref}
@@ -74,7 +76,7 @@ export default function MyTextarea({setRichFormData}: MyTextareaProps, {richForm
                 </RichTextarea>
             )}
             />
-            <input type="submit" />
+            <input type="submit" className="submitInput" />
         </form>
     </div>
   );
