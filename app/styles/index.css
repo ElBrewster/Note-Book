@@ -90,8 +90,15 @@ header {
 }
 
 .navButton:hover {
-  background-color: #6b3bf0;
-  border: 2px solid #8459fa;
+  background-color: #2e0799;
+  border: 2px solid #4808fa;
+  padding: 7px;
+  width: 14rem;
+}
+
+.navButton:active {
+  background-color: #5025c7;
+  border: 2px solid #2d01a6;
   padding: 7px;
   width: 14rem;
 }

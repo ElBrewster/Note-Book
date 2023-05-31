@@ -29,6 +29,7 @@ input {
   padding: 0.5rem;
   margin: .2rem 0;
 }
+
 body > div > main > div > div.textareaWrapper > form > div  {
   display: flex;
   position: relative;
@@ -53,10 +54,10 @@ textarea {
 document.querySelector("body > div > main > div > div.textareaWrapper > form > div > textarea")
 .submitInput {
   background-color: #4154d6;
-  border-radius: .2rem;
-  color: #d5d5fe;
-  max-width: 20rem;
-  text-align: left;
+  /* border-radius: .2rem; */
+  /* color: #d5d5fe; */
+  /* max-width: 20rem; */
+  /* text-align: left; */
 }
 
 .submitInput:hover {
